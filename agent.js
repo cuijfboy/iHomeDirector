@@ -1,6 +1,6 @@
 var SerialPort = require("serialport");
-var port = new SerialPort.SerialPort("/dev/tty.usbserial", {
-    bandrate: 38400
+var port = new SerialPort("/dev/tty.usbserial", {
+    baudRate: 38400
 });
 
 port.on("open", function(error) {
@@ -16,6 +16,7 @@ port.on("data", function(data) {
 });
 
 var sendRaw = function (data) {
+    console.log(data.toString('hex'));
     port.write(data, function(error) {
         if(error) {
             console.log("write fail !!!");
