@@ -1,3 +1,15 @@
+var wol = require('wake_on_lan')
+var wake = function (mac) {
+    wol.wake(mac, function(error) {
+        if(error) {
+            console.log(error);
+        }else{
+            console.log("succeed wake up : " + mac);
+        }
+    })
+}
+exports.wake = wake;
+
 var SerialPort = require("serialport");
 var port = new SerialPort("/dev/tty.usbserial", {
     baudRate: 38400

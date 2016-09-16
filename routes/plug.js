@@ -22,4 +22,9 @@ router.get('/down/off', function(req, res, next) {
     res.send('/down/off');
 });
 
+router.get('/wake/box', function(req, res, next) {
+    agent.wake('00:30:18:02:fc:bf');
+    res.send('/wake/box');
+});
+
 module.exports = router;
