@@ -11,7 +11,7 @@ var wake = function (mac) {
 exports.wake = wake;
 
 var SerialPort = require("serialport");
-var port = new SerialPort("/dev/tty.usbserial", {
+var port = new SerialPort("/dev/ttyAMA0", {
     baudRate: 38400
 });
 
